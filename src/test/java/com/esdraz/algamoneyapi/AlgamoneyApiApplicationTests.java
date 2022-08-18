@@ -1,4 +1,4 @@
-package com.esdraz.algamoneyapi.algamoneyapi;
+package com.esdraz.algamoneyapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

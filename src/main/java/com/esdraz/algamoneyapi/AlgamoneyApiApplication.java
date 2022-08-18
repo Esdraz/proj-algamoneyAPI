@@ -1,4 +1,4 @@
-package com.esdraz.algamoneyapi.algamoneyapi;
+package com.esdraz.algamoneyapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
