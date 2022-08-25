@@ -20,7 +20,7 @@ public class PessoaResource {
     @Autowired
     private PessoaRepository pessoaRepository;
 
-    @PostMapping
+    @GetMapping
     public List<Pessoa> listar() {
         return pessoaRepository.findAll();
     }
