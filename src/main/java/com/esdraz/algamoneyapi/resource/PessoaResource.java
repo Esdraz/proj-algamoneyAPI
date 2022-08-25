@@ -3,6 +3,7 @@ package com.esdraz.algamoneyapi.resource;
 import com.esdraz.algamoneyapi.event.RecursoCriadoEvent;
 import com.esdraz.algamoneyapi.model.Pessoa;
 import com.esdraz.algamoneyapi.repository.PessoaRepository;
+import com.esdraz.algamoneyapi.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,9 @@ public class PessoaResource {
 
     @Autowired
     private PessoaRepository pessoaRepository;
+
+    @Autowired
+    private PessoaService pessoaService;
 
     @Autowired
     private ApplicationEventPublisher publisher;
@@ -47,4 +51,12 @@ public class PessoaResource {
     public void remover(@PathVariable Long id) {
         pessoaRepository.deleteById(id);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @Valid @RequestBody Pessoa pessoa) {
+        Pessoa pessoaSalva = pessoaService.atualizar(id, pessoa);
+        return ResponseEntity.ok(pessoaSalva);
+    }
+
+
 }
